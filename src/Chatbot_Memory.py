@@ -11,8 +11,8 @@ st.set_page_config(
 )
 
 # Setup config file
-working_dir = 'https://github.com/jyostnab/Sample_Chatbot/edit/master/src/' #os.path.dirname(os.path.abspath(__file__))  # getting the current dir using code
-config_file_path = os.path.join(working_dir, 'config.json')  # ensure the correct path
+#working_dir = 'https://github.com/jyostnab/Sample_Chatbot/edit/master/src/' #os.path.dirname(os.path.abspath(__file__))  # getting the current dir using code
+config_file_path = 'config.json'  # ensure the correct path
 
 # Check if the file exists before opening it
 if os.path.exists(config_file_path):

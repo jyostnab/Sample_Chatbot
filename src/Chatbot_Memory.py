@@ -11,7 +11,6 @@ st.set_page_config(
 )
 
 # Setup config file
-# Setup config file
 working_dir = os.path.dirname(os.path.abspath(__file__))  # getting the current dir using code
 config_file_path = os.path.join(working_dir, 'config.json')  # ensure the correct path
 

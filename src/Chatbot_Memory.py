@@ -1,4 +1,3 @@
-#working code for GroQ API based Chatbot with memory
 import os
 import json
 import streamlit as st
@@ -10,23 +9,8 @@ st.set_page_config(
     page_icon='🦙'  # tab icon, get it from Emoji icon web page
 )
 
-# Setup config file
-#working_dir = 'https://github.com/jyostnab/Sample_Chatbot/edit/master/src/' #os.path.dirname(os.path.abspath(__file__))  # getting the current dir using code
-config_file_path = 'config.json'  # ensure the correct path
-
-# Check if the file exists before opening it
-if os.path.exists(config_file_path):
-    try:
-        with open(config_file_path, 'r') as file:
-            config_data = json.load(file)
-    except json.JSONDecodeError:
-        st.error(f"Error decoding JSON from config file at {config_file_path}")
-        st.stop()  # Stop further execution
-else:
-    st.error(f"Config file not found at {config_file_path}")
-    st.stop()  # Stop further execution
-
-GROQ_API_KEY = config_data["GROQ_API_KEY"]
+# Directly set the Groq API Key
+GROQ_API_KEY = "your_api_key_here"  # Replace this with your actual API key
 
 # Save the API key to the environment variable
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY

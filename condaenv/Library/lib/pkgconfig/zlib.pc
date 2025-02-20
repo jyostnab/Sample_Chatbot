@@ -1,0 +1,13 @@
+prefix=C:/Users/Admin/Downloads/GroQ_Streamlit_Chatbot/condaenv/Library
+exec_prefix=C:/Users/Admin/Downloads/GroQ_Streamlit_Chatbot/condaenv/Library
+libdir=C:/Users/Admin/Downloads/GroQ_Streamlit_Chatbot/condaenv/Library/lib
+sharedlibdir=C:/Users/Admin/Downloads/GroQ_Streamlit_Chatbot/condaenv/Library/lib
+includedir=C:/Users/Admin/Downloads/GroQ_Streamlit_Chatbot/condaenv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

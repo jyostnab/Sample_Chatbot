@@ -11,20 +11,21 @@ st.set_page_config(
 )
 
 # Setup config file
-#config_file_path = r'C:\Users\Admin\Downloads\GroQ_Streamlit_Chatbot\src\config.json'
-#working_dir = os.path.dirname(os.path.abspath(__file__))  # getting the current dir using code
-config_file_path = './config.json'
-# Load config data
-#config_data = json.load(open(config_file_path))
-try:
-    with open(config_file_path, 'r') as file:
-        config_data = json.load(file)
-except FileNotFoundError:
+# Setup config file
+working_dir = os.path.dirname(os.path.abspath(__file__))  # getting the current dir using code
+config_file_path = os.path.join(working_dir, 'config.json')  # ensure the correct path
+
+# Check if the file exists before opening it
+if os.path.exists(config_file_path):
+    try:
+        with open(config_file_path, 'r') as file:
+            config_data = json.load(file)
+    except json.JSONDecodeError:
+        st.error(f"Error decoding JSON from config file at {config_file_path}")
+        st.stop()  # Stop further execution
+else:
     st.error(f"Config file not found at {config_file_path}")
-    raise
-except json.JSONDecodeError:
-    st.error(f"Error decoding JSON from config file at {config_file_path}")
-    raise
+    st.stop()  # Stop further execution
 
 GROQ_API_KEY = config_data["GROQ_API_KEY"]
 

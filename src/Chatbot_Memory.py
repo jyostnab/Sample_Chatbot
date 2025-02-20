@@ -13,7 +13,7 @@ st.set_page_config(
 # Setup config file
 #config_file_path = r'C:\Users\Admin\Downloads\GroQ_Streamlit_Chatbot\src\config.json'
 #working_dir = os.path.dirname(os.path.abspath(__file__))  # getting the current dir using code
-config_file_path = 'Sample_Chatbot/src/config.json'
+config_file_path = './config.json'
 # Load config data
 #config_data = json.load(open(config_file_path))
 try:
